@@ -1,4 +1,6 @@
-# Crush
+# Crushed: The Guide to Exosphere
+
+![Exosphere Logo](assets/exo-logo.png)
 
 **A polyglot Virtual Operating System (vOS) with capability-based security**
 
@@ -60,6 +62,9 @@ Compile and run:
 crush compile hello.py
 crush run hello.py.casm.json
 ```
+
+### Platforms
+![Platform Stack](assets/platform_stack.png)
 
 ## Architecture
 

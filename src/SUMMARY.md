@@ -29,6 +29,11 @@
     - [Configuration](reference/configuration.md)
     <!-- - [Language Reference](reference/lang.md) -->
 
+- [Branding & Identity](branding.md)
+    - [Design System](design_system.md)
+    - [Visual Identity](visual_identity.md)
+    - [Logos & ASCII](logos.md)
+
 - [Internals](internals/README.md)
     - [Memory Model](internals/memory/README.md)
     - [Type System](internals/types.md)
