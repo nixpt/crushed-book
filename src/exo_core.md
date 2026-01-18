@@ -6,6 +6,8 @@ The **EXO Core Contract** is the philosophical foundation of Crush. It dictates 
 
 > **EXO owns mechanism. Capsule owns meaning.**
 
+![Security Metaphor](assets/security_metaphor.png)
+
 ## Implications
 
 1.  **No Ambient Authority**: A capsule cannot simply "open a file". It must possess a capability (mechanism) granted by the host, and it uses that capability to perform an action (meaning).

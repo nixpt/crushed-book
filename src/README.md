@@ -1,6 +1,6 @@
 # Crushed: The Guide to Exosphere
 
-![Exosphere Logo](assets/exo-logo.png)
+![Book Cover](assets/cover.png)
 
 **A polyglot Virtual Operating System (vOS) with capability-based security**
 

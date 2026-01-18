@@ -1,5 +1,7 @@
 # Capsule Isolation
 
+![Isolation Pods](assets/isolation_pods.png)
+
 Crush implements strong isolation for capsules using a layered virtualization approach at the HAL (Hardware Abstraction Layer) level.
 
 ## Mechanism
