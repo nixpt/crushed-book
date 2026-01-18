@@ -1,0 +1,403 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Introduction - Crush Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Crush Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="crush"><a class="header" href="#crush">Crush</a></h1>
+<p><strong>A polyglot Virtual Operating System (vOS) with capability-based security</strong></p>
+<p>Crush acts as a <strong>virtual operating system</strong> that expands and uplifts the host kernel, enabling code from multiple programming languages (Python, Rust, C, Go, Bash) to run in a single, secure execution environment with memory safety guarantees and fine-grained permission control.</p>
+<h2 id="features"><a class="header" href="#features">Features</a></h2>
+<ul>
+<li>🌐 <strong>Polyglot Execution</strong>: Compile and run Python, Rust, C, Go, and Bash code</li>
+<li>🐚 <strong>Interactive Shell</strong>: Full REPL with standard shell syntax (<code>ls</code>, <code>git</code>) and scripting</li>
+<li>🔒 <strong>Capability-Based Security</strong>: Sandboxed access to I/O, filesystem, and network</li>
+<li>📦 <strong>Capsule Isolation</strong>: Per-capsule Virtual File System (VFS) and scoped resource handles</li>
+<li>📜 <strong>Permission Manifests</strong>: Declare and enforce required capabilities at runtime</li>
+<li>🧠 <strong>Memory Safety</strong>: Arena-based memory management with runtime borrow checking</li>
+<li>⚡ <strong>Control Flow</strong>: Full support for if/else, while loops, and comparisons</li>
+<li>🔧 <strong>Extensible</strong>: Modular architecture with <code>crush-shell</code> and <code>crush-stdlib</code></li>
+</ul>
+<h2 id="quick-start"><a class="header" href="#quick-start">Quick Start</a></h2>
+<h3 id="installation"><a class="header" href="#installation">Installation</a></h3>
+<pre><code class="language-bash"># Clone the repository
+git clone https://github.com/crush-dev/crush.git
+cd crush
+
+# Build the project
+cargo build --release
+
+# Add to PATH
+export PATH="$PWD/target/release:$PATH"
+</code></pre>
+<h3 id="interactive-shell"><a class="header" href="#interactive-shell">Interactive Shell</a></h3>
+<p>Run <code>crush</code> to enter the interactive shell. It supports standard shell commands and Crush scripting.</p>
+<pre><code class="language-bash">$ crush
+Crush Interactive REPL
+Type ':help' for assistance or 'exit' to quit.
+crush (crush)&gt; echo "Hello World"
+=&gt; Hello World
+crush (crush)&gt; ls -la
+... (file listing) ...
+crush (crush)&gt; :set lang python
+crush (python)&gt; print("Hello from Python")
+=&gt; Hello from Python
+</code></pre>
+<h3 id="running-scripts"><a class="header" href="#running-scripts">Running Scripts</a></h3>
+<p>Create <code>hello.py</code>:</p>
+<pre><code class="language-python">print("Hello from Crush!")
+</code></pre>
+<p>Compile and run:</p>
+<pre><code class="language-bash">crush compile hello.py
+crush run hello.py.casm.json
+</code></pre>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<pre><code>┌─────────────┐
+│ Python Code │
+└──────┬──────┘
+       │ python_walker
+       ▼
+┌─────────────┐     ┌──────────────┐
+│ Rust Code   │────▶│ CAST (JSON)  │
+└─────────────┘     └──────┬───────┘
+                           │ crush_compiler
+                           ▼
+┌─────────────┐     ┌──────────────┐
+│ C Code      │     │ CASM (JSON)  │
+└─────────────┘     └──────┬───────┘
+                           │
+                           ▼
+                    ┌──────────────┐
+                    │  Crush VM    │
+                    └──────────────┘
+</code></pre>
+<h3 id="compilation-pipeline"><a class="header" href="#compilation-pipeline">Compilation Pipeline</a></h3>
+<ol>
+<li><strong>Source → CAST</strong>: Language-specific walkers translate source code to Crush AST</li>
+<li><strong>CAST → CASM</strong>: Crush compiler generates bytecode with control flow compilation</li>
+<li><strong>CASM → Execution</strong>: VM executes bytecode with permission enforcement</li>
+</ol>
+<h2 id="capabilities"><a class="header" href="#capabilities">Capabilities</a></h2>
+<p>Crush provides sandboxed access to host resources through capabilities:</p>
+<div class="table-wrapper"><table><thead><tr><th>Capability</th><th>Description</th><th>Permission</th></tr></thead><tbody>
+<tr><td><code>io.print</code></td><td>Print to stdout</td><td><code>io.print</code></td></tr>
+<tr><td><code>io.input</code></td><td>Read from stdin</td><td><code>io.input</code></td></tr>
+<tr><td><code>fs.read</code></td><td>Read files</td><td><code>fs.read</code></td></tr>
+<tr><td><code>fs.write</code></td><td>Write files</td><td><code>fs.write</code></td></tr>
+<tr><td><code>net.http_get</code></td><td>HTTP GET requests</td><td><code>net.http_get</code></td></tr>
+<tr><td><code>ffi.call</code></td><td>Call native functions</td><td><code>ffi.call</code></td></tr>
+</tbody></table>
+</div>
+<h3 id="permission-manifests"><a class="header" href="#permission-manifests">Permission Manifests</a></h3>
+<p>Programs declare required capabilities in their manifest:</p>
+<pre><code class="language-json">{
+  "manifest": {
+    "permissions": ["io.print", "fs.read"]
+  }
+}
+</code></pre>
+<p>The VM enforces these permissions at runtime, denying unauthorized capability calls.</p>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="filesystem-access"><a class="header" href="#filesystem-access">Filesystem Access</a></h3>
+<pre><code class="language-python"># Write to file
+__crush_call__("fs.write", "output.txt", "Hello, World!")
+
+# Read from file
+content = __crush_call__("fs.read", "output.txt")
+print(content)
+</code></pre>
+<h3 id="network-request"><a class="header" href="#network-request">Network Request</a></h3>
+<pre><code class="language-python">html = __crush_call__("net.http_get", "http://example.com")
+print(html)
+</code></pre>
+<h3 id="ffi-foreign-function-interface"><a class="header" href="#ffi-foreign-function-interface">FFI (Foreign Function Interface)</a></h3>
+<pre><code class="language-python"># Call native C function
+result = __crush_call__("ffi.call", "libc.so.6", "strlen", "hello")
+print(result)  # 5
+</code></pre>
+<h2 id="documentation"><a class="header" href="#documentation">Documentation</a></h2>
+<ul>
+<li><strong><a href="languages/cast-spec.html">CAST Specification</a></strong>: Formal definition of Crush AST</li>
+<li><strong><a href="docs/GETTING_STARTED.html">Getting Started</a></strong>: Detailed tutorial</li>
+<li><strong><a href="https://docs.rs/crush-vm">API Documentation</a></strong>: Rustdoc for all crates</li>
+<li><strong><a href="docs/ARCHITECTURE.html">Architecture</a></strong>: Design and implementation details</li>
+</ul>
+<h2 id="project-structure"><a class="header" href="#project-structure">Project Structure</a></h2>
+<pre><code>crush/
+├── crush-shell/       # Interactive shell logic (embeddable)
+├── crush-cli/         # CLI entry point
+├── crush-vm/          # Virtual machine implementation
+├── crush-stdlib/      # Standard library capabilities (FS, IO, System)
+├── crush-core/        # Shared types and IPC
+├── kernel/            # Exo-kernel with capability implementations
+├── languages/
+│   ├── casm/          # CASM bytecode format
+│   ├── python_walker/ # Python → CAST translator
+│   ├── rust_walker/   # Rust → CAST translator
+│   ├── c_walker/      # C → CAST translator
+│   ├── go_walker/     # Go → CAST translator
+│   └── crush_compiler/# CAST → CASM compiler
+├── examples/          # Example programs
+└── docs/              # Documentation
+</code></pre>
+<h2 id="development"><a class="header" href="#development">Development</a></h2>
+<h3 id="running-tests"><a class="header" href="#running-tests">Running Tests</a></h3>
+<pre><code class="language-bash">cargo test --workspace
+</code></pre>
+<h3 id="building-documentation"><a class="header" href="#building-documentation">Building Documentation</a></h3>
+<pre><code class="language-bash">cargo doc --workspace --open
+</code></pre>
+<h3 id="adding-a-new-language-walker"><a class="header" href="#adding-a-new-language-walker">Adding a New Language Walker</a></h3>
+<p>See <a href="docs/CONTRIBUTING.html">CONTRIBUTING.md</a> for a guide on adding new language support.</p>
+<h2 id="roadmap"><a class="header" href="#roadmap">Roadmap</a></h2>
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+Polyglot compilation pipeline</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Memory arena with borrow checking</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Permission manifests</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Control flow (if/while)</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Comparison and bitwise operators</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Process isolation (IPC-based Capsule/HAL isolation)</li>
+<li><input disabled="" type="checkbox"/>
+For loops and iterators</li>
+<li><input disabled="" type="checkbox"/>
+Classes and structs</li>
+<li><input disabled="" type="checkbox"/>
+Exception handling</li>
+<li><input disabled="" type="checkbox"/>
+Concurrency primitives</li>
+</ul>
+<h2 id="license"><a class="header" href="#license">License</a></h2>
+<p>MIT License - see <a href="LICENSE">LICENSE</a> for details.</p>
+<h2 id="contributing"><a class="header" href="#contributing">Contributing</a></h2>
+<p>Contributions are welcome! Please see <a href="docs/CONTRIBUTING.html">CONTRIBUTING.md</a> for guidelines.</p>
+<h2 id="acknowledgments"><a class="header" href="#acknowledgments">Acknowledgments</a></h2>
+<p>Inspired by:</p>
+<ul>
+<li><strong>WebAssembly</strong>: Portable bytecode format</li>
+<li><strong>Rust</strong>: Memory safety without garbage collection</li>
+<li><strong>Capability-based security</strong>: Principle of least privilege</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                            <a rel="next prefetch" href="getting_started.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+                    <a rel="next prefetch" href="getting_started.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
