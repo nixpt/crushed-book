@@ -47,5 +47,5 @@ This repository serves as the central hub for the **Exosphere Design System**. A
 ---
 
 <div align="center">
-  <sub>Part of the 💠 [Exosphere Ecosystem](https://github.com/nixpt/Exosphere)</sub>
+  <sub>Part of the 💠 [Exosphere Ecosystem](https://github.com/nixpt/crush)</sub>
 </div>
