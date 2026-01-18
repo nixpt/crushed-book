@@ -1,43 +1,51 @@
-# Crushed: The Guide to Exosphere
+<div align="center">
 
-![Book Cover](src/assets/cover.png)
+![Crushed Cover](src/assets/cover.png)
 
-This repository contains the source code and assets for **Crushed**, the official technical handbook and user manual for the **Exosphere** ecosystem.
+# 📖 CRUSHED: The Guide 💠
+**The Official User Manual & Technical Specification for Exosphere**
 
-## 📖 About the Book
-"Crushed" is designed to be a comprehensive resource for developers, architects, and agents transitioning to the **Agent-Native OS** paradigm. It covers everything from the core philosophical contracts to low-level CASM bytecode specifications.
+[![mdBook](https://img.shields.io/badge/Powered%20by-mdBook-orange.svg)](https://rust-lang.github.io/mdBook/)
+[![Documentation](https://img.shields.io/badge/Status-Beta-cyan.svg)]()
+[![Spec Version](https://img.shields.io/badge/Spec-1.0-blueviolet.svg)]()
 
-### Key Sections
--   **The Vision**: Philosophical foundations of Exosphere.
--   **Architecture**: Deep dives into the CRUSH VM and EXO Kernel.
--   **Language Reference**: Specifications for CAST and CASM.
--   **Developer SDKs**: Guides for building capsules in Rust and Python.
--   **Cookbook**: Practical, secure implementation patterns.
+[The Vision](src/vision.md) • [Architecture](src/architecture.md) • [Security](src/security.md) • [SDKs](src/sdks.md) • [Cookbook](src/cookbook.md)
 
 ---
 
-## 🛠️ Building the Book
-The book is built using **[mdBook](https://github.com/rust-lang/mdBook)**.
+</div>
 
-### Prerequisites
--   Rust & Cargo
--   mdBook (`cargo install mdbook`)
+## 📘 About the Book
+**Crushed** is the definitive resource for building and deploying on the Exosphere platform. It bridges the gap between high-level agentic philosophy and low-level execution mechanics.
 
-### Local Development
+### 🍱 What's Inside?
+*   **The Vision**: Philosophical foundations of the Agent-Native OS.
+*   **Deep Dives**: Structural analysis of the CRUSH VM and EXO Kernel.
+*   **Language Specs**: Detailed reference for CAST and CASM.
+*   **Developer SDKs**: First-party guides for Rust and Python.
+*   **The Cookbook**: Production-ready recipes for secure workloads.
+
+---
+
+## 🛠️ Local Development
+
+This book is powered by **mdBook**.
+
 ```bash
-# Build the book
-mdbook build
+# Install mdBook
+cargo install mdbook
 
-# Serve the book locally with hot-reloading
+# Build & Serve
 mdbook serve --open
 ```
 
-The generated HTML will be located in the `book/` directory.
+---
+
+## 🎨 Design Hub
+This repository serves as the central hub for the **Exosphere Design System**. All high-fidelity logos, technical diagrams, and UI tokens are maintained in `src/assets/`.
 
 ---
 
-## 🎨 Branding & Identity
-This repository also serves as the central hub for the **Exosphere Design System** and branding assets. High-fidelity logos, icons, and technical illustrations can be found in `src/assets/`.
-
----
-© 2026 Exosphere Project | [Exosphere Root](https://github.com/nixpt/Exosphere)
+<div align="center">
+  <sub>Part of the 💠 [Exosphere Ecosystem](https://github.com/nixpt/Exosphere)</sub>
+</div>
