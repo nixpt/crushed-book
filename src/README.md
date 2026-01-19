@@ -68,25 +68,32 @@ crush run hello.py.casm.json
 
 ## Architecture
 
-```
-┌─────────────┐
-│ Python Code │
-└──────┬──────┘
-       │ python_walker
-       ▼
-┌─────────────┐     ┌──────────────┐
-│ Rust Code   │────▶│ CAST (JSON)  │
-└─────────────┘     └──────┬───────┘
-                           │ crush_compiler
-                           ▼
-┌─────────────┐     ┌──────────────┐
-│ C Code      │     │ CASM (JSON)  │
-└─────────────┘     └──────┬───────┘
-                           │
-                           ▼
-                    ┌──────────────┐
-                    │  Crush VM    │
-                    └──────────────┘
+```mermaid
+graph TD
+    subgraph Source["Polyglot Sources"]
+        P[Python]
+        R[Rust]
+        C[C / Go]
+    end
+
+    subgraph Compiler["Compilation Pipeline"]
+        W[Walkers] --> CAST[CAST Abstract Syntax Tree]
+        CAST --> Comp[Crush Compiler]
+        Comp --> CASM[CASM Bytecode]
+    end
+
+    subgraph Runtime["Secure Execution"]
+        VM[Crush VM]
+        HAL[EXO Kernel / HAL]
+    end
+
+    Source --> W
+    CASM --> VM
+    VM -->|Capability Request| HAL
+    HAL -->|Syscall| OS[Host OS]
+
+    style VM fill:#00D2FF,stroke:#333,stroke-width:2px
+    style HAL fill:#FF9F00,stroke:#333,stroke-width:2px
 ```
 
 ### Compilation Pipeline
@@ -96,6 +103,10 @@ crush run hello.py.casm.json
 3. **CASM → Execution**: VM executes bytecode with permission enforcement
 
 ## Capabilities
+
+<div align="center">
+  <img src="assets/crush_verified_seal.png" width="150" alt="Verified Secure">
+</div>
 
 Crush provides sandboxed access to host resources through capabilities:
 
