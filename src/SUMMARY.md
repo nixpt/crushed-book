@@ -15,6 +15,11 @@
     - [Capability-Based Security](security.md)
     - [Encrypted Execution](guides/encrypted_execution.md)
 
+- [AI-Native Security](security.md)
+    - [Identity & Provenance](identity.md)
+    - [Agent Knowledge Graph (AKGS)](akgs.md)
+    - [Agent Communication (ACP)](acp.md)
+
 - [Language Reference](lang_ref.md)
     - [CRUSH Language Overview](crush_lang.md)
     - [CAST: The Abstract Syntax Tree](cast.md)
