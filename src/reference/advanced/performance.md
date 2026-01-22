@@ -88,7 +88,7 @@ For performance-critical sections, use compiled languages:
 
 ```bash
 # Profile your program
-crush run --profile program.crush
+exo run --profile program.crush
 
 # View profile report
 crush profile-report
@@ -100,10 +100,10 @@ Use binary format for faster loading:
 
 ```bash
 # Compile to binary
-crush compile program.crush --output program.casmb
+exo compile program.crush --output program.casmb
 
 # Binary loads 2-3x faster
-crush run program.casmb
+exo run program.casmb
 ```
 
 ## Next Steps

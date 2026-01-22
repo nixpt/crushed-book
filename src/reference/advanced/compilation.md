@@ -64,13 +64,13 @@ The Crush VM executes the CASM bytecode.
 
 ```bash
 # Compile Crush to CASM
-crush compile program.crush
+exo compile program.crush
 
 # Run directly (compiles and executes)
-crush run program.crush
+exo run program.crush
 
 # Compile to binary format
-crush compile program.crush --output program.casmb
+exo compile program.crush --output program.casmb
 ```
 
 ## Next Steps

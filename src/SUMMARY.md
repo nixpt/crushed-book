@@ -11,9 +11,11 @@
 - [Architecture & Design](architecture.md)
     - [The EXO Core Contract](exo_core.md)
     - [Capsule Isolation & VFS](isolation.md)
-    - [The CRUSH Virtual Machine](crush_vm.md)
+    - [NanoVM: High-Performance Runtime](nanovm.md)
     - [Capability-Based Security](security.md)
     - [Encrypted Execution](guides/encrypted_execution.md)
+    - [Nexquelium: Agent Browser](nexquelium.md)
+    - [Exosphere OS: Metal Integration](vision_os.md)
 
 - [AI-Native Security](security.md)
     - [Identity & Provenance](identity.md)

@@ -62,7 +62,7 @@ crush init            # Create Crush.toml
 crush package         # Build .cap archive from current dir
 crush publish         # Sign and announce to Federation
 crush install <name>  # Resolve and download
-crush run <name>      # Run installed capsule
+exo run <name>      # Run installed capsule
 ```
 
 ## 3. Federation Strategy

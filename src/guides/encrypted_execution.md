@@ -37,7 +37,7 @@ To distribute a capsule securely, you encrypt its compiled `.casm` file.
 
 ```bash
 # Compile source to CASM first
-crush compile my_script.crush
+exo compile my_script.crush
 
 # Encrypt the CASM file
 crush encrypt my_script.casm --output my_package.ecap
@@ -70,10 +70,10 @@ crush inspect my_package.ecap --verify
 
 ## 4. Running Encrypted Capsules
 
-The `crush run` command automatically detects `.ecap` files and switches to encrypted mode.
+The `exo run` command automatically detects `.ecap` files and switches to encrypted mode.
 
 ```bash
-crush run my_package.ecap
+exo run my_package.ecap
 ```
 
 **What happens internally:**
@@ -104,5 +104,5 @@ The `transcript_hash` in the `ExecutionComplete` event is a SHA-256 hash of ever
 
 *   **Running `.ecap` files**: No intermediate files (`.casm`, `.cast`) are created on disk. All decryption occurs in protected memory.
 *   **Running source files (`.py`, `.rs`)**: The CLI compiles source code for execution.
-    *   By default, `crush run source.py` uses temporary directories for intermediate artifacts, which are deleted immediately after execution.
-    *   To persist artifacts for debugging, use `crush compile source.py` manually.
+    *   By default, `exo run source.py` uses temporary directories for intermediate artifacts, which are deleted immediately after execution.
+    *   To persist artifacts for debugging, use `exo compile source.py` manually.

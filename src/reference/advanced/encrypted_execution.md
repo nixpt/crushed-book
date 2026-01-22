@@ -14,7 +14,7 @@ CRUSH supports a comprehensive Encrypted Execution environment designed for high
 *   `crush key generate`: Create a master key.
 *   `crush encrypt <file>`: Encrypt a `.casm` file.
 *   `crush inspect <file>`: Verify an encrypted package.
-*   `crush run <file>`: Execute (automatically handles decryption).
+*   `exo run <file>`: Execute (automatically handles decryption).
 
 ## Architecture
 

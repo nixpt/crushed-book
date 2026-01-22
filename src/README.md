@@ -59,8 +59,8 @@ print("Hello from Crush!")
 
 Compile and run:
 ```bash
-crush compile hello.py
-crush run hello.py.casm.json
+exo compile hello.py
+exo run hello.py.casm.json
 ```
 
 ### Platforms

@@ -114,14 +114,14 @@ The Crush VM automatically detects the format based on file extension:
 
 ```bash
 # JSON format (auto-detected)
-crush run program.casm
+exo run program.casm
 
 # Binary format (auto-detected)
-crush run program.casmb
+exo run program.casmb
 
 # Explicit format specification
-crush run --format=json program.txt
-crush run --format=binary program.bin
+exo run --format=json program.txt
+exo run --format=binary program.bin
 ```
 
 ## Converting Between Formats
@@ -130,7 +130,7 @@ crush run --format=binary program.bin
 
 ```bash
 # Using crush-cli
-crush compile program.casm --output program.casmb
+exo compile program.casm --output program.casmb
 
 # Or programmatically in Rust
 use casm::{Program, Format};
@@ -234,14 +234,14 @@ impl Format {
 vim program.casm
 
 # 2. Test with JSON
-crush run program.casm
+exo run program.casm
 
 # 3. Commit JSON to git
 git add program.casm
 git commit -m "Add new feature"
 
 # 4. Build binary for release
-crush compile program.casm --output program.casmb
+exo compile program.casm --output program.casmb
 
 # 5. Distribute binary
 cp program.casmb /usr/local/bin/myapp.casmb
@@ -253,7 +253,7 @@ cp program.casmb /usr/local/bin/myapp.casmb
 # .github/workflows/build.yml
 - name: Compile CASM
   run: |
-    crush compile src/*.casm --output-dir dist/
+    exo compile src/*.casm --output-dir dist/
     
 - name: Upload artifacts
   uses: actions/upload-artifact@v2

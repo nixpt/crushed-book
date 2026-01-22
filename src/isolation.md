@@ -27,4 +27,5 @@ The `ScopedHal` maintains a per-capsule environment variable map. Capsules canno
 
 - **Zero-Config Isolation**: Simply running a capsule with a manifest automatically creates a sandboxed environment.
 - **Fine-Grained Permissions**: The VM rejects any capability call that doesn't match the permissions declared in the capsule manifest, even before it reaches the HAL.
-- **Resource Limits**: (Future) Metering is integrated into the `ScopedHal` to track and limit CPU, Memory, and I/O usage per capsule.
+- **Syscall Filtering**: The **Syscall Governor** enforces a strict `seccomp-bpf` filter on agent processes, blocking direct network and filesystem access at the kernel level by default.
+- **Resource Limits**: Metering is integrated into the `ScopedHal` and `CgroupManager` to track and limit CPU, Memory, and I/O usage per capsule.

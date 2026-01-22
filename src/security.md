@@ -37,3 +37,10 @@ Capabilities in Exosphere follow a structured format: `namespace.action:scope`.
 - **PoLP (Principle of Least Privilege)**: Only the exact capabilities needed are granted.
 - **Reference Monitor**: The `exo-core` acts as a central reference monitor that cannot be bypassed.
 - **Cryptographic Audit**: (Optional) In Encrypted Mode, every capability invocation is cryptographically signed and logged.
+
+## Key Update: Role-Based Access Control (RBAC)
+
+With the introduction of the `IamValidator`, Exosphere now supports a high-level permission layer for Agents:
+- **Identities**: Every capsule has a unique `Identity`.
+- **Roles**: Capsules are assigned roles like `admin`, `agent`, or `viewer`.
+- **Policy Enforcement**: The IAM layer checks these roles *before* the capability engine processes granular requests, providing a "Defense in Depth" strategy.
