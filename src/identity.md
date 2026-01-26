@@ -30,4 +30,17 @@ When a capsule communicates (via ACP) or commits data (to AKGS), the header incl
 *   `Signature`: Ed25519 signature of the payload.
 *   `Timestamp`: Replay protection.
 
-This creates an immutable **Audit Trail** for every AI action.
+## Wave3 Identity (DID)
+
+Exosphere integrates with the **Wave3 Protocol** to provide decentralized identity (DID) resolution. 
+*   **DID Mapping**: Capsule IDs can be cryptographically mapped to `did:wave3` strings.
+*   **Resolution**: The `exo-core` maintains a mapping between DIDs, Capsule IDs, and Public Keys for global discovery.
+
+## Cryptographic Delegation
+
+Crush supports **Third-Party Delegation** through Wave3 Envelopes:
+1.  **Granter**: Signs a delegation for a specific resource and action.
+2.  **Grantee**: Presents this delegation envelope to `exo-core`.
+3.  **Kernel**: Validates the signature and grants the capability, cryptographically linking the grant to the granter's DID.
+
+This allows for secure, cross-capsule and cross-host permission sharing without centralized brokers.

@@ -10,6 +10,9 @@ Exosphere is built to be language-agnostic, and our SDKs provide the the high-le
 |-----|----------|-------------|
 | **[Rust SDK](sdk_rust.md)** | Rust | High performance, system tools, and low-level drivers. |
 | **[Python SDK](sdk_py.md)** | Python | Rapid prototyping, AI/ML agents, and data orchestration. |
+| **[C SDK](sdk_c_sdk.md)** | C | High performance, system integration, and low-level control. |
+| **[Swift SDK](sdk_swift.md)** | Swift | Cross-platform development with modern language features. |
+| **[JVM SDK](sdk_jvm.md)** | Java/Kotlin | Enterprise-grade applications and Android integration. |
 | **[C ABI](sdk_c.md)** | C / FFI | Building new language walkers and low-level integrations. |
 
 ---
